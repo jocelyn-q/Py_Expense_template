@@ -1,6 +1,13 @@
 import csv
 from PyInquirer import prompt
 
+from user import load_users
+
+user_names = []
+users = load_users()
+user_names = [user["SIGL"] for user in users]
+
+
 expense_questions = [
     {
         "type": "input",
@@ -13,9 +20,10 @@ expense_questions = [
         "message": "New Expense - Label: ",
     },
     {
-        "type": "input",
+        "type": "list",
         "name": "spender",
         "message": "New Expense - Spender: ",
+        "choices": user_names,
     },
 ]
 
@@ -23,6 +31,7 @@ SAVE_EXPENSE_FILE = "expense_report.csv"
 
 
 def new_expense(*args):
+    print(user_names)
     infos = prompt(expense_questions)
     # Writing the informations on external file might be a good idea ¯\_(ツ)_/¯
     expense = {

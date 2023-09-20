@@ -27,3 +27,16 @@ def add_user_to_csv(user):
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
         writer.writerow(user)
+
+
+def load_users():
+    users = []
+    try:
+        with open(SAVE_USER_FILE, "r") as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                users.append(row)
+        return users
+    except FileNotFoundError:
+        print("User file not found.")
+        return []
