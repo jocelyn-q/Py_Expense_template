@@ -54,6 +54,9 @@ def new_expense(*args):
         "spender": infos["spender"],
         "payback": infos["payback"],
     }
+
+    print(infos)
+    print(expense)
     save_to_csv_expense(expense)
     print("Expense Added !")
     return True

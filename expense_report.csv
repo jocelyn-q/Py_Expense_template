@@ -1,6 +1,4 @@
-amount,label,spender
-100,bug,simon
-23,aaa,RDuval
-23,zeferg,RDuval
-344,ooo,RDuval,"['PChojka', 'simon']"
-300,test,RDuval,"['RDuval', 'PChojka', 'simon']"
+amount,label,spender,payback
+
+100,ssss,RDuval,"['RDuval', 'PChojka', 'simon']"
+200,100,PChojka,"['RDuval', 'PChojka', 'simon']"
