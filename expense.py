@@ -19,7 +19,7 @@ expense_questions = [
     },
 ]
 
-EXPENSES_FILE = "expense_report.csv"
+SAVE_EXPENSE_FILE = "expense_report.csv"
 
 
 def new_expense(*args):
@@ -36,9 +36,8 @@ def new_expense(*args):
 
 
 def save_to_csv_expense(expense):
-    with open(EXPENSES_FILE, "a", newline="") as csvfile:
+    with open(SAVE_EXPENSE_FILE, "a", newline="") as csvfile:
         fieldnames = ["amount", "label", "spender"]
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
-        # Écrivez les données de la dépense dans le fichier CSV
         writer.writerow(expense)
