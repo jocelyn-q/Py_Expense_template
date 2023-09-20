@@ -12,7 +12,6 @@ SAVE_EXPENSE_FILE = "expense_report.csv"
 
 
 def new_expense(*args):
-    print(user_names)
     infos = prompt(expense_questions)
 
     ttt = {"payback": "['RDuval', 'PChojka', 'simon']"}
@@ -62,7 +61,6 @@ def load_expense_history():
 
 def generate_status_report():
     expenses = load_expense_history()
-    print(expenses)
     user_contributions = {}
     user_balances = {}
 
