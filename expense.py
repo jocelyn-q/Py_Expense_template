@@ -45,18 +45,15 @@ SAVE_EXPENSE_FILE = "expense_report.csv"
 
 
 def new_expense(*args):
-    print(user_names)
     infos = prompt(expense_questions)
-    # Writing the informations on external file might be a good idea ¯\_(ツ)_/¯
+
     expense = {
         "amount": infos["amount"],
         "label": infos["label"],
         "spender": infos["spender"],
-        "payback": infos["payback"],
+        "payback": ",".join(infos["payback"]),
     }
 
-    print(infos)
-    print(expense)
     save_to_csv_expense(expense)
     print("Expense Added !")
     return True

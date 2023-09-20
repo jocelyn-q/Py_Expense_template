@@ -1,4 +1,5 @@
 amount,label,spender,payback
 
-100,ssss,RDuval,"['RDuval', 'PChojka', 'simon']"
-200,100,PChojka,"['RDuval', 'PChojka', 'simon']"
+800,test,RDuval,"RDuval,PChojka,simon,jojo"
+100,eee,RDuval,"RDuval,PChojka,simon,jojo"
+222,ssss,RDuval,"RDuval,PChojka,simon,jojo"
