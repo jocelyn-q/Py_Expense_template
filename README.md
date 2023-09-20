@@ -31,8 +31,8 @@ Creation of new files is recommended. Clean architectures will be rewarded
 - [x] A new user can be created (Mandatory user information : Name)
 - [x] Users are stored in an external file for persistency
 - [x] When adding a new expense, Spender should be chosen among existing users
-- [ ] An expense can be divided between several existing users. By default, total amount of the expense will be evenly split between all involved users and spender should automatically be checked as involved in the expense
-- [ ] New mandatory expense information : People involved in the expense
+- [x] An expense can be divided between several existing users. By default, total amount of the expense will be evenly split between all involved users and spender should automatically be checked as involved in the expense
+- [x] New mandatory expense information : People involved in the expense
 
 ![Functional View](<untitled(2).png>)
 

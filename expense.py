@@ -7,6 +7,14 @@ user_names = []
 users = load_users()
 user_names = [user["SIGL"] for user in users]
 
+payback_choices = [
+    {
+        "name": user,
+        "value": user,
+        "checked": True,
+    }
+    for user in user_names
+]
 
 expense_questions = [
     {
@@ -25,6 +33,12 @@ expense_questions = [
         "message": "New Expense - Spender: ",
         "choices": user_names,
     },
+    {
+        "type": "checkbox",
+        "name": "payback",
+        "message": "New Expense - Paybacks: ",
+        "choices": payback_choices,
+    },
 ]
 
 SAVE_EXPENSE_FILE = "expense_report.csv"
@@ -38,6 +52,7 @@ def new_expense(*args):
         "amount": infos["amount"],
         "label": infos["label"],
         "spender": infos["spender"],
+        "payback": infos["payback"],
     }
     save_to_csv_expense(expense)
     print("Expense Added !")
@@ -46,7 +61,10 @@ def new_expense(*args):
 
 def save_to_csv_expense(expense):
     with open(SAVE_EXPENSE_FILE, "a", newline="") as csvfile:
-        fieldnames = ["amount", "label", "spender"]
+        fieldnames = ["amount", "label", "spender", "payback"]
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+        if csvfile.tell() == 0:
+            writer.writeheader()
 
         writer.writerow(expense)

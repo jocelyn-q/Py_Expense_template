@@ -1,2 +1,6 @@
-40,dep,lulu
-10,aaa,simon
+amount,label,spender
+100,bug,simon
+23,aaa,RDuval
+23,zeferg,RDuval
+344,ooo,RDuval,"['PChojka', 'simon']"
+300,test,RDuval,"['RDuval', 'PChojka', 'simon']"
